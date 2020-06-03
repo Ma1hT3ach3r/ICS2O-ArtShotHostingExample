@@ -106,7 +106,7 @@ class Particle {
     this.position = createVector(position.x, position.y);
     this.velocity = createVector(force.x, force.y);
     this.drag = 0.95;
-    this.lifespan = 255;
+    this.lifespan = 555;
   }
 
   update() {
@@ -122,7 +122,7 @@ class Particle {
   // Draw a line to another
   display(other) {
     stroke(0, this.lifespan);
-    fill(0, this.lifespan/2);    
+    fill(0, (this.lifespan/2)%255, this.lifespan%255);    
     ellipse(this.position.x,this.position.y, 8, 8);    
     // If we need to draw a line
     if (other) {
